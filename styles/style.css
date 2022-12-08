@@ -1,0 +1,26 @@
+/* Spacing */
+.mt-25 {
+    margin-top: 25px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+.mb-50 {
+    margin-bottom: 50px;
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.circle-icon {
+    background: #0ab5203e;
+    padding:10px;
+    border-radius: 50%;
+}
