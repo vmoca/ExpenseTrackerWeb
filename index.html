@@ -1,112 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    </head>
+    <body>
 
-    <section class="display_expense mt-50 mb-25">
-        <div class="row text-center">
-            <h1 class="display-6 fw-bold">Control de Gastos</h1>
-        </div>
-    
-        <div class="row">
-            <div class="col-lg-3 mx-auto">
-                <div class="card">
-                    <div class="card-body">
+        <section class="display_expense mt-50 mb-25">
+            <div class="row text-center title-app">
+                <h1 class="display-6 fw-bold">Control de Gastos</h1>
+            </div>
+        
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
 
-                        <div class="text-center">
-                            <h5 class="card-title">Total Ahorrado</h5>
-                            <h2 class="card-subtitle mb-2">1200€</h2>
-                        </div>
-    
-                        <div class="d-grid gap-2 d-sm-flex">
-                            <div class="card mb-3 col-md-6">
-                                <div class="row g-0">
-                                    <div class="col-md-2">
-                                        <i class="bi bi-arrow-up circle-icon"></i>
-                                        <!-- <i class="bi bi-arrow-up-circle-fill"></i> -->
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ingresos</h5>
-                                            <p class="card-text">1800,00€</p>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="text-center">
+                                <h5 class="card-title">Total Ahorrado</h5>
+                                <h2 id="balance" class="card-subtitle mb-2">0€</h2>
                             </div>
         
-                            <div class="card mb-3 col-md-6">
-                                <div class="row g-0">
-                                    <div class="col-md-2">
-                                        <i class="bi bi-arrow-down circle-icon"></i>
-                                        <!-- <i class="bi bi-arrow-down-circle-fill"></i> -->
+                            <div class="d-grid gap-1 d-sm-flex">
+                                <div class="card incomes-card mb-3 col-md-6">
+                                    <div class="row g-0">
+                                        <div class="col-md-3">
+                                            <i class="bi bi-arrow-up circle-icon icon-green"></i>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body incomes-card">
+                                                <h6 class="card-title">Ingresos</h6>
+                                                <p id="incomeValue" class="card-text">+0.00€</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-10">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Gastos</h5>
-                                            <p class="card-text">600,00€</p>
+                                </div>
+            
+                                <div class="card expenses-card mb-3 col-md-6">
+                                    <div class="row g-0">
+                                        <div class="col-md-3">
+                                            <i class="bi bi-arrow-down circle-icon icon-red"></i>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body expenses-card">
+                                                <h6 class="card-title">Gastos</h6>
+                                                <p id="expensesValue" class="card-text">-0.00€</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="history mb-25">
-        <div class="row">
-            <div class="col-lg-3 mx-auto">
-                <div class="row">
-                    <h4 class="fw-bold">Historial</h4>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="new_transaction mb-100">
-        <div class="row">
-            <div class="col-lg-3 mx-auto">
-                <div class="row">
-                    <h4 class="fw-bold">Añadir nueva transacción</h4>
-                </div>
-                <div class="mb-3">
-                    <form id="addTransaction" novalidate style="display: block; width: 100%;">
-                        <div class="mb-3" style="width:100%;">
-                            <label for="concept">Concepto</label><br>
-                            <input type="text" id="concept" placeholder="Añade el concepto" style="width:100%;">
-                        </div>
-                        <div class="mb-3">
-                            <label for="amount">Cantidad <br>(Ingreso: +20, Gasto: -20)</label><br>
-                            <input type="text" id="amount" placeholder="Introduce cantidad" style="width:100%;">
-                        </div>
-                        <div class="mb-3">
-                            <button id="saveToLocalStorage" type="button" class="btn btn-primary" style="width:100%;">Añadir transacción</button>
-                        </div>
-                    </form>
+        <section class="history mb-25">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="row">
+                        <h4 class="fw-bold">Historial</h4>
+                    </div>
+                    <ul id="valueList" class="valueList">
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./main.js"></script>
-</body>
+        <section class="new_transaction mb-100">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="row">
+                        <h4 class="fw-bold">Añadir nueva transacción</h4>
+                    </div>
+                    <div class="mb-3">
+                        <form id="transactionForm" novalidate>
+                            <div class="mb-3">
+                                <label for="concept">Concepto</label><br>
+                                <input type="text" id="concept" placeholder="Añade el concepto">
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount">Cantidad <br>(Ingreso: +20, Gasto: -20)</label><br>
+                                <input type="text" id="amount" placeholder="Introduce la cantidad">
+                            </div>
+                            <div class="mb-3">
+                                <button id="save" type="submit" class="btn btn-primary">Añadir transacción</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./main.js"></script>
+    </body>
 </html>

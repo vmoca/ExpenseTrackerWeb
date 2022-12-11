@@ -1,4 +1,4 @@
-/* Spacing */
+/* --- Spacing --- */
 .mt-25 {
     margin-top: 25px;
 }
@@ -8,7 +8,6 @@
 .mt-100 {
     margin-top: 100px;
 }
-
 .mb-25 {
     margin-bottom: 25px;
 }
@@ -19,8 +18,119 @@
     margin-bottom: 100px;
 }
 
-.circle-icon {
-    background: #0ab5203e;
-    padding:10px;
-    border-radius: 50%;
+/* --- Balance card styles --- */
+.title-app {
+    margin: 1rem 0;
 }
+.card {
+    border: 0px !important;
+    color: #fff;
+}
+.card p {
+    font-weight: 700;
+    font-size: 18px;
+}
+.card h6 {
+    font-weight: 300;
+    margin-bottom: 0.1rem;
+}
+.card-body {
+    background: rgb(0,135,254);
+    background: linear-gradient(142deg, rgba(0,135,254,1) 0%, rgba(235,16,180,0.6825323879551821) 47%, rgba(255,164,0,1) 100%);
+    border-radius: 15px;
+}
+.incomes-card, .expenses-card {
+    background: transparent !important;
+}
+
+/* --- Icons styles --- */
+.circle-icon {
+    padding:8px 12px;
+    border-radius: 50%;
+    position:absolute;
+    top:25%;
+    left:5%;
+}
+.icon-green {
+    background: #ffffffd6;
+    color: #03c460;
+}
+.icon-red {
+    background: #ffffffd6;
+    color: #f60000;
+}
+
+/* --- List styles --- */
+.valueList {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.valueList li {
+    margin: 5px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+.valueList li.negative {
+    border-right: #f60000 3px solid;
+}
+.valueList li.positive {
+    border-right: #03c460 3px solid;
+}
+
+/* --- Delete list items styles --- */
+.delete-item {
+    cursor: pointer;
+    background-color: #dcdcdc;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    font-size: 18px;
+    line-height: 42px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+.valueList li:hover .delete-item {
+    opacity: 1;
+}
+
+/* --- Form styles --- */
+.transactionForm {
+    display: block;
+    width: 100%;
+}
+
+/* --- Input styles --- */
+label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+input {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* --- Button styles --- */
+button#save {
+    width: 100%;
+    padding: 10px;
+    margin: 0.5rem 0;
+    background-color: #5c5cfd;
+}
+button#save:hover {
+    background-color: #4a4adf;
+}
+
